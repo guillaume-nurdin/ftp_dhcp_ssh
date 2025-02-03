@@ -4,15 +4,6 @@ Ce projet consiste à configurer un réseau local avec deux machines virtuelles 
 
 ---
 
-## 📋 Table des matières
-1. [Objectifs](#objectifs)
-2. [Configuration des machines](#configuration-des-machines)
-3. [Installation et configuration des services](#installation-et-configuration-des-services)
-4. [Tests et vérifications](#tests-et-vérifications)
-5. [Sécurité](#sécurité)
-6. [Commandes utiles](#commandes-utiles)
-
----
 
 ## 🎯 Objectifs
 - **Machine 1** :
