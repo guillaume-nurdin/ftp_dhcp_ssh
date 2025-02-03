@@ -2,6 +2,15 @@
 
 Ce projet consiste à configurer un réseau local avec deux machines virtuelles sous Debian. La **Machine 1** agit comme serveur DNS et DHCP, tandis que la **Machine 2** héberge un serveur FTP et SFTP. L'objectif est de permettre une communication sécurisée entre les machines via des services réseau standard.
 
+---
+
+## 📋 Table des matières
+1. [Objectifs](#objectifs)
+2. [Configuration des machines](#configuration-des-machines)
+3. [Installation et configuration des services](#installation-et-configuration-des-services)
+4. [Tests et vérifications](#tests-et-vérifications)
+5. [Sécurité](#sécurité)
+6. [Commandes utiles](#commandes-utiles)
 
 ---
 
@@ -12,6 +21,7 @@ Ce projet consiste à configurer un réseau local avec deux machines virtuelles 
 - **Machine 2** :
   - Installer et configurer un serveur FTP (proFTPd) et SFTP.
   - Restreindre l'accès au serveur SFTP avec des identifiants spécifiques.
+  - Utiliser `ufw` pour sécuriser les ports ouverts.
 - **Communication** :
   - Tester la connexion SFTP entre les machines en utilisant le nom de domaine `dns.ftp.com`.
 
@@ -46,4 +56,30 @@ Ce projet consiste à configurer un réseau local avec deux machines virtuelles 
 ### Sur la Machine 2
 1. **Serveur FTP** :
    - Installer `proftpd`.
-   - Configurer `/etc/proftpd/proft
+   - Configurer `/etc/proftpd/proftpd.conf` pour limiter les connexions.
+   - Créer un utilisateur FTP : `laplateforme` avec le mot de passe `Marseille13!`.
+
+2. **Serveur SFTP** :
+   - Utiliser SSH pour permettre les connexions SFTP.
+   - Changer le port SSH à `6500` dans `/etc/ssh/sshd_config`.
+   - Redémarrer le service : `sudo systemctl restart ssh`.
+
+3. **Configuration d'`ufw`** :
+   - Installer `ufw` si ce n'est pas déjà fait : `sudo apt install ufw`.
+   - Autoriser le port `6500` pour SFTP :
+     ```bash
+     sudo ufw allow 6500/tcp
+     ```
+   - Activer `ufw` :
+     ```bash
+     sudo ufw enable
+     ```
+
+---
+
+## 🧪 Tests et vérifications
+
+### Résolution DNS
+Sur la Machine 2, vérifier que le nom de domaine `dns.ftp.com` est résolu en `172.16.1.102` :
+```bash
+nslookup dns.ftp.com
