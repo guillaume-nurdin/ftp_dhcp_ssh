@@ -81,11 +81,11 @@ nslookup dns.ftp.com
 
 | **Rôle**                | **Machine 1 (DHCP + DNS)**       | **Machine 2 (FTP + SSH)**         |
 |-------------------------|----------------------------------|-----------------------------------|
-| **Adresse IP**          | `172.16.1.1` (fixe)              | `172.16.1.102` (DHCP)               |
-| **Serveur DHCP**        | ✅                                | ❌                                 |
-| **Serveur DNS**         | ✅                                | ❌                                 |
-| **Serveur FTP (ProFTPd)** | ❌                                | ✅                                 |
-| **Serveur SSH (SFTP)**  | ❌                                | ✅ (port **6500**)                 |
+| **Adresse IP**          | `172.16.1.1` (fixe)              | `172.16.1.102` (DHCP)             |
+| **Serveur DHCP**        | ✅                              | ❌                                |
+| **Serveur DNS**          | ✅                             | ❌                               |
+| **Serveur FTP (ProFTPd)** | ❌                            | ✅                                |
+| **Serveur SSH (SFTP)**  | ❌                              | ✅ (port **6500**)                |
 
 ---
 
