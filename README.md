@@ -74,3 +74,20 @@ Ce projet consiste à configurer un réseau local avec deux machines virtuelles 
 Sur la Machine 2, vérifier que le nom de domaine `dns.ftp.com` est résolu en `172.16.1.102` :
 ```bash
 nslookup dns.ftp.com
+
+
+
+# 🚀 Résumé des Machines
+
+| **Rôle**                | **Machine 1 (DHCP + DNS)**       | **Machine 2 (FTP + SSH)**         |
+|-------------------------|----------------------------------|-----------------------------------|
+| **Adresse IP**          | `172.16.1.1` (fixe)              | `172.16.1.102` (DHCP)               |
+| **Serveur DHCP**        | ✅                                | ❌                                 |
+| **Serveur DNS**         | ✅                                | ❌                                 |
+| **Serveur FTP (ProFTPd)** | ❌                                | ✅                                 |
+| **Serveur SSH (SFTP)**  | ❌                                | ✅ (port **6500**)                 |
+
+---
+
+✅ **Une fois ces configurations effectuées, tout devrait fonctionner correctement !** 🚀
+
