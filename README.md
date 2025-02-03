@@ -2,15 +2,6 @@
 
 Ce projet consiste à configurer un réseau local avec deux machines virtuelles sous Debian. La **Machine 1** agit comme serveur DNS et DHCP, tandis que la **Machine 2** héberge un serveur FTP et SFTP. L'objectif est de permettre une communication sécurisée entre les machines via des services réseau standard.
 
----
-
-## 📋 Table des matières
-1. [Objectifs](#objectifs)
-2. [Configuration des machines](#configuration-des-machines)
-3. [Installation et configuration des services](#installation-et-configuration-des-services)
-4. [Tests et vérifications](#tests-et-vérifications)
-5. [Sécurité](#sécurité)
-6. [Commandes utiles](#commandes-utiles)
 
 ---
 
